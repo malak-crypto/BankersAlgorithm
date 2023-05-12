@@ -81,7 +81,7 @@ Then a request is asked for example: process 1 requests 1 unit of process 1. Aft
 
 ## Few words
 - I hope you find this repo helpful for your next project. 
-- Contact me anytime for any questions will be glad to help :)
+- Feel free to contact me anytime 😊 will be glad to answer any questions or implement your suggestions for a more efficient optimized code 😄
  
  
  
