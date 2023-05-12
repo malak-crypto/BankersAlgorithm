@@ -41,6 +41,12 @@ These libraries can be easily installed using pip. Open your terminal and run th
 <img width="313" alt="window6" src="https://github.com/malak-crypto/BankersAlgorithm/assets/68809008/aaa86add-f5c7-456e-8db5-8c08d98b5796">
 
 - Now try a deadlock case to see the other popup messages :)
+- Example:
+- total resource <6,5,7,6>
+- available <3,1,1,2>
+- currently allocated <<1,2,2,1>,<1,0,3,3>,<1,2,1,0>>
+- maximum need <<3,3,2,2>,<1,2,3,4>,<1,3,5,0>>
+- process 2 requests 1 of resource 2
 
 ## How it works ? 
 Its quite simple actually after taking all the user inputs we take a "reserved" value of necessary matrices note that a numpy array we must use np.copy as regular assignment will be referenced. 
@@ -52,7 +58,9 @@ Then a request is asked for example: process 1 requests 1 unit of process 1. Aft
 <img width="528" alt="s2" src="https://github.com/malak-crypto/BankersAlgorithm/assets/68809008/2d65accb-de6a-44f5-9d1a-9164f335d03a">
  
  Here comes the cool part
+ 
  <img width="698" alt="s3" src="https://github.com/malak-crypto/BankersAlgorithm/assets/68809008/11c2e7fd-9c4e-4494-ace1-e0e81d13d590">
+ 
  - we have a while loop to check whether the entire matrix is set to a certain value (-1 our flag to state that a process is done)
  - then we have a for loop to check on each process
  - if the need resources of this process is less than or equal available then it is safe 
@@ -63,11 +71,12 @@ Then a request is asked for example: process 1 requests 1 unit of process 1. Aft
  - now you wonder an infinite loop might occure because what if we never have the entire matrix set to -1 and not all processes are unsafe
  - the counter plays its role here after each for loop we update the counter once we reached equal number of processes we exit
  - the counter also ensures if they don't come in a nice sequence of safe safe safe or unsafe unsafe unsafe if they are random everything will be checked 
- - try this example 
+ - try this example:
  - total resource <6,5,7,6>
  - available <3,1,1,2>
  - currently allocated <<1,0,3,3>,<1,2,2,1>,<1,2,1,0>>
  - maximum need <<1,2,3,4>,<3,3,2,2>,<1,3,5,0>>
+ - process 1 requests 1 of resource 1
  - not the most efficient approach but it gets the job done ;)
 
 ## Few words
